@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DARIQUEM | Soluciones de Ingeniería y Telecomunicaciones</title>
+    <!-- Bootstrap 5 (para diseño responsive rápido) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome (iconos) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+        }
+        .hero {
+            background: linear-gradient(135deg, #0b2a4a 0%, #1e4a76 100%);
+            color: white;
+            padding: 4rem 0;
+            margin-bottom: 2rem;
+        }
+        .hero h1 {
+            font-weight: 600;
+            font-size: 2.8rem;
+        }
+        .section-title {
+            border-left: 5px solid #1e4a76;
+            padding-left: 1rem;
+            margin: 2rem 0 1.5rem;
+            font-weight: 600;
+        }
+        .service-card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+            height: 100%;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+        .service-icon {
+            font-size: 2.5rem;
+            color: #1e4a76;
+            margin-bottom: 1rem;
+        }
+        footer {
+            background: #f8f9fa;
+            padding: 2rem 0;
+            margin-top: 3rem;
+            border-top: 1px solid #dee2e6;
+        }
+        .contact-link {
+            text-decoration: none;
+            color: #1e4a76;
+            font-weight: 500;
+        }
+        .contact-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navegación simple -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">DARIQUEM</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#sobre-mi">Sobre mí</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero / Presentación -->
+    <section class="hero" id="inicio">
+        <div class="container text-center">
+            <h1 class="display-4 fw-bold">Ing. Juan Enrique Arias</h1>
+            <p class="lead">Electrónica y Telecomunicaciones | Soluciones a Medida | Desarrollo Python</p>
+            <hr class="my-4 w-25 mx-auto" style="height: 2px; background-color: white;">
+            <p class="fs-5">+15 años de experiencia en diseño de redes, ISP, monitoreo e integración de sistemas de seguridad.</p>
+            <a href="#contacto" class="btn btn-light btn-lg mt-3">Contáctame</a>
+        </div>
+    </section>
+
+    <div class="container">
+
+        <!-- Sobre la empresa -->
+        <section id="sobre-mi">
+            <h2 class="section-title">Sobre la empresa</h2>
+            <div class="row">
+                <div class="col-lg-8">
+                    <p class="fs-5"><strong>DARIQUEM</strong> nace de la experiencia de más de una década en el sector de las telecomunicaciones y la ingeniería electrónica. Nos especializamos en ofrecer soluciones técnicas robustas, personalizadas y de alta calidad para empresas y particulares.</p>
+                    <p class="fs-5">Nuestro enfoque combina el conocimiento profundo de redes y comunicaciones con el desarrollo de software a medida, permitiéndonos crear sistemas integrados que resuelven necesidades específicas: desde vigilancia inteligente con alertas por Telegram hasta automatización de infraestructuras.</p>
+                </div>
+                <div class="col-lg-4">
+                    <div class="bg-light p-4 rounded">
+                        <h5><i class="fas fa-check-circle text-success me-2"></i> Experiencia</h5>
+                        <p>Más de 15 años en el mercado ecuatoriano.</p>
+                        <h5 class="mt-4"><i class="fas fa-tools text-primary me-2"></i> Especialidad</h5>
+                        <p>Ingeniería electrónica, redes ISP, monitoreo, integración Python.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Servicios -->
+        <section id="servicios" class="mt-5">
+            <h2 class="section-title">Servicios Profesionales</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card service-card p-4">
+                        <div class="service-icon"><i class="fas fa-network-wired"></i></div>
+                        <h4>Diseño y Optimización de Redes</h4>
+                        <p>Redes ISP, cableado estructurado, fibra óptica, Wi-Fi empresarial. Diseñamos la red que tu negocio necesita, con escalabilidad y seguridad.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card service-card p-4">
+                        <div class="service-icon"><i class="fas fa-video"></i></div>
+                        <h4>Sistemas de Videovigilancia</h4>
+                        <p>Instalación de cámaras IP, NVR, soluciones Hikvision. Diseño de cobertura, almacenamiento local y en nube, acceso remoto.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card service-card p-4">
+                        <div class="service-icon"><i class="fas fa-code"></i></div>
+                        <h4>Desarrollo Python a Medida</h4>
+                        <p>Automatización, integración con APIs (Hikvision ISAPI, Telegram, Tuya), scripts para monitoreo, control de dispositivos y alertas personalizadas.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card service-card p-4">
+                        <div class="service-icon"><i class="fas fa-bell"></i></div>
+                        <h4>Integración de Alarmas</h4>
+                        <p>Conexión de sirenas, sensores y actuadores con sistemas de video. Activación automática por detección de intrusos, control remoto vía Telegram.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card service-card p-4">
+                        <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+                        <h4>Monitoreo y Telemetría</h4>
+                        <p>Sistemas de supervisión remota para variables industriales (temperatura, energía, etc.) con alertas en tiempo real y dashboards personalizados.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card service-card p-4">
+                        <div class="service-icon"><i class="fas fa-headset"></i></div>
+                        <h4>Consultoría Técnica</h4>
+                        <p>Asesoramiento en proyectos de telecomunicaciones, selección de equipos, diseño de soluciones a medida y soporte técnico especializado.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sobre el Ingeniero (más detalle) -->
+        <section class="mt-5 p-4 bg-light rounded">
+            <div class="row align-items-center">
+                <div class="col-md-3 text-center mb-3 mb-md-0">
+                    <i class="fas fa-user-circle fa-6x" style="color: #1e4a76;"></i>
+                </div>
+                <div class="col-md-9">
+                    <h3>Ing. Juan Enrique Arias</h3>
+                    <p class="text-muted">Electrónica y Telecomunicaciones | Desarrollador Python</p>
+                    <p>Con una trayectoria de más de 15 años en el sector, he trabajado en proyectos de diversa envergadura: desde el diseño de redes ISP para proveedores locales hasta la implementación de sistemas de seguridad inteligente para empresas privadas. Mi enfoque se basa en entender la necesidad real del cliente y aplicar la tecnología más adecuada, ya sea con equipos de última generación o con desarrollos propios que integran y potencian las soluciones existentes.</p>
+                    <p>La combinación de mi formación en electrónica y mi pasión por la programación me permite abordar problemas complejos con una visión integral: hardware + software = solución completa.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contacto -->
+        <section id="contacto" class="mt-5">
+            <h2 class="section-title">Contacto</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <i class="fas fa-envelope me-2"></i> <strong>Email profesional:</strong> <a href="mailto:jarias@DARIQUEM.com" class="contact-link">juanoenriq@gmail.com</a>
+                    </div>
+                    <div class="mb-3">
+                        <i class="fas fa-phone-alt me-2"></i> <strong>Teléfono / WhatsApp:</strong> <a href="https://wa.me/593992965212" class="contact-link" target="_blank">+593 99 296 5212</a>
+                    </div>
+                    <div class="mb-3">
+                        <i class="fas fa-map-marker-alt me-2"></i> <strong>Ubicación:</strong> Quito, Pichincha, Ecuador
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <i class="fab fa-github me-2"></i> <strong>GitHub:</strong> <a href="https://github.com/dariquem" class="contact-link" target="_blank">dariquem</a>
+                    </div>
+                    <div class="mb-3">
+                        <i class="fab fa-linkedin me-2"></i> <strong>LinkedIn:</strong> <a href="#" class="contact-link" target="_blank">/in/juan-enrique-arias</a> <span class="text-muted"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="container">
+            <p class="mb-0">&copy; 2025 DARIQUEM - Ing. Juan Enrique Arias. Todos los derechos reservados.</p>
+            <p class="small text-muted mt-2">Soluciones de ingeniería a medida en Ecuador.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
