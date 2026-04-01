@@ -15,7 +15,7 @@
         }
         .hero {
             position: relative;
-            height: 100vh;
+            height: 70vh;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -101,11 +101,18 @@
         .hero::after {
             content: "";
             position: absolute;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(0, 212, 255, 0.2), transparent 70%);
-            top: -100px;
-            right: -100px;
+        
+            top: 0;
+            right: 0;
+        
+            width: 400px;
+            height: 400px;
+        
+            background: url('/static/img/logo-dariquem.png') no-repeat center;
+            background-size: contain;
+        
+            opacity: 0.08; /* 🔥 sutil */
+            filter: blur(1px); /* difuminado elegante */
         }
         .hero h1 {
             font-weight: 600;
