@@ -191,6 +191,13 @@
             .hero-title { font-size: 2.2rem; }
             .section-title { font-size: 1.7rem; }
         }
+        /* Fuerza que todas las imágenes de las tarjetas tengan el mismo tamaño */
+        .card-img-top {
+            width: 100%;
+            height: 200px;           /* Altura fija para todas */
+            object-fit: cover;       /* Recorta manteniendo proporción, llena el área */
+            object-position: center; /* Centra la parte más importante */
+        }
     </style>
 </head>
 <body>
