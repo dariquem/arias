@@ -4,12 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>DARIQUEM | Ingeniería, Telecomunicaciones y Distribución Mayorista</title>
+    
+    <!-- ========== METAETIQUETAS PARA REDES SOCIALES (OPEN GRAPH) ========== -->
+    <meta property="og:title" content="DARIQUEM - Ingeniería y distribución mayorista de equipos tecnológicos">
+    <meta property="og:description" content="Soluciones en redes, videovigilancia, control de acceso y automatización. Distribuidor autorizado de Hikvision, ZKTeco, TP-Link. Implementaciones con MikroTik, Ubiquiti, Cisco, Aruba. Precios de mayorista en Ecuador.">
+    <meta property="og:image" content="https://dariquem.github.io/arias/assets/img/preview.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dariquem.github.io/arias/">
+    <meta property="og:site_name" content="DARIQUEM">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="DARIQUEM - Ingeniería y tecnología para empresas">
+    <meta name="twitter:description" content="Equipos a precio mayorista e integración profesional. Cotiza sin compromiso.">
+    <meta name="twitter:image" content="https://dariquem.github.io/arias/assets/img/preview.jpg">
+    <meta name="description" content="Más de 15 años de experiencia. Venta de equipos a precio mayorista e integración profesional. Distribuidor SISEGUSA en Ecuador.">
+    
     <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome 6 (iconos profesionales) -->
+    <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <!-- Google Fonts (tipografía moderna) -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;600;700;800&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -22,7 +38,7 @@
             background-color: #ffffff;
             line-height: 1.5;
         }
-        /* Navbar elegante */
+        /* Navbar */
         .navbar {
             background-color: #ffffff !important;
             box-shadow: 0 4px 20px rgba(0,0,0,0.03);
@@ -47,7 +63,7 @@
         .nav-link:hover {
             color: #1c6e8f !important;
         }
-        /* Hero moderno con overlay y patrón sutil */
+        /* Hero */
         .hero {
             position: relative;
             background: linear-gradient(120deg, #0A1C2F 0%, #134B6B 100%);
@@ -66,6 +82,31 @@
             background-repeat: repeat;
             background-size: 45px;
             opacity: 0.1;
+            pointer-events: none;
+        }
+        /* Logo de fondo difuminado - marca de agua */
+        .hero::after {
+            content: "";
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            width: 280px;
+            height: 280px;
+            background: url('assets/img/logo-dariquem.png') no-repeat center;
+            background-size: contain;
+            opacity: 0.12;
+            filter: blur(1.5px);
+            pointer-events: none;
+            z-index: 1;
+        }
+        @media (max-width: 768px) {
+            .hero::after {
+                width: 150px;
+                height: 150px;
+                opacity: 0.1;
+                bottom: 10px;
+                right: 10px;
+            }
         }
         .hero-content {
             position: relative;
@@ -86,35 +127,10 @@
             font-weight: 500;
             margin-bottom: 1.2rem;
         }
-
-        /* Logo de fondo difuminado */
-        .hero::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            width: 380px;
-            height: 380px;
-            background: url('assets/img/logo-dariquem.png') no-repeat center;
-            background-size: contain;
-            opacity: 0.12;
-            filter: blur(1.5px);
-            pointer-events: none; /* para que no interfiera con clics */
-            z-index: 1;
-        }
-        
-        /* Si quieres que aparezca también en móviles más pequeño */
-        @media (max-width: 768px) {
-            .hero::after {
-                width: 220px;
-                height: 220px;
-                opacity: 0.1;
-            }
-        }
         .btn-outline-light {
             border-width: 2px;
         }
-        /* Secciones con espaciado limpio */
+        /* Secciones */
         .section-title {
             font-weight: 700;
             font-size: 2rem;
@@ -137,16 +153,35 @@
             box-shadow: 0 6px 18px rgba(0,0,0,0.05);
             border-radius: 1.2rem;
             overflow: hidden;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
         }
         .card-hover:hover {
             transform: translateY(-6px);
             box-shadow: 0 20px 30px -12px rgba(0,0,0,0.12);
         }
-        .product-img {
+        .card-body {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .card-body .btn {
+            margin-top: auto;
+            align-self: flex-start;
+        }
+        /* Imágenes uniformes en el carrusel */
+        .card-img-top {
+            width: 100%;
             height: 200px;
-            object-fit: contain;
-            background: #f8fafc;
-            padding: 1rem;
+            object-fit: cover;
+            object-position: center;
+            background-color: #f8fafc;
+        }
+        @media (max-width: 768px) {
+            .card-img-top {
+                height: 160px;
+            }
         }
         .badge-mayorista {
             background: #e8b82e20;
@@ -160,15 +195,6 @@
             font-weight: 700;
             color: #1e4a76;
             font-size: 1.2rem;
-        }
-        .brand-icon {
-            filter: grayscale(0.2);
-            transition: 0.2s;
-            opacity: 0.8;
-        }
-        .brand-icon:hover {
-            filter: grayscale(0);
-            opacity: 1;
         }
         .certif-img {
             max-width: 100%;
@@ -191,12 +217,12 @@
             .hero-title { font-size: 2.2rem; }
             .section-title { font-size: 1.7rem; }
         }
-        /* Fuerza que todas las imágenes de las tarjetas tengan el mismo tamaño */
-        .card-img-top {
-            width: 100%;
-            height: 200px;           /* Altura fija para todas */
-            object-fit: cover;       /* Recorta manteniendo proporción, llena el área */
-            object-position: center; /* Centra la parte más importante */
+        /* Estilo para los botones del carrusel */
+        .carousel-control-prev-icon, .carousel-control-next-icon {
+            background-color: #1c6e8f;
+            border-radius: 50%;
+            padding: 1.2rem;
+            background-size: 50%;
         }
     </style>
 </head>
@@ -227,7 +253,6 @@
         <div class="row align-items-center">
             <div class="col-lg-8 mx-auto text-center">
                 <span class="hero-badge"><i class="fas fa-certificate me-1"></i> Ingeniería especializada · Distribuidor mayorista</span>
-                
                 <h1 class="hero-title">Soluciones de ingeniería y tecnología para empresas</h1>
                 <p class="lead mt-3">+15 años diseñando redes, sistemas de seguridad y automatización. <br class="d-none d-md-block">Venta de equipos a <strong>precio de mayorista</strong> e integración profesional.</p>
                 <div class="mt-4">
@@ -241,7 +266,7 @@
 
 <div class="container py-4">
 
-    <!-- Distribuidor oficial destacado -->
+    <!-- Distribuidor oficial SISEGUSA -->
     <div class="row justify-content-center my-4">
         <div class="col-md-10">
             <div class="alert alert-light border-start border-4 border-warning shadow-sm p-4" role="alert">
@@ -253,22 +278,22 @@
         </div>
     </div>
 
-    <!-- SECCIÓN: EQUIPOS DESTACADOS (VENTA MAYORISTA) -->
+    <!-- SECCIÓN: EQUIPOS DESTACADOS (CARRUSEL) -->
     <section id="productos">
         <div class="d-flex justify-content-between align-items-center flex-wrap">
             <h2 class="section-title">Equipos destacados · Venta mayorista</h2>
             <span class="badge-mayorista mb-2"><i class="fas fa-chart-line me-1"></i> Precios de distribuidor</span>
         </div>
         <p class="text-muted mb-4">Ofrecemos equipos de marcas líderes en seguridad, redes y control de acceso. Contáctanos para lista completa de precios y asesoría técnica.</p>
-    
+
         <div id="carouselProductos" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <!-- Slide 1 -->
                 <div class="carousel-item active">
                     <div class="row g-4">
                         <div class="col-md-6 col-lg-3">
-                            <div class="card card-hover h-100">
-                                <img src="assets/images/DS-2CD1643G2-LIZSU.png" class="card-img-top p-3" alt="Cámara Hikvision">
+                            <div class="card card-hover">
+                                <img src="assets/images/DS-2CD1643G2-LIZSU.png" class="card-img-top" alt="Cámara Hikvision 4MP">
                                 <div class="card-body">
                                     <h5 class="fw-bold">Cámara IP Hikvision 4MP</h5>
                                     <p class="small text-secondary">DS-2CD1643G2-LIZSU · Varifocal, H.265+, IR 30m, PoE.</p>
@@ -280,8 +305,8 @@
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-3">
-                            <div class="card card-hover h-100">
-                                <img src="assets/images/NVRAcuSense16CH.jpg" class="card-img-top p-3" alt="NVR Hikvision">
+                            <div class="card card-hover">
+                                <img src="assets/images/NVRAcuSense16CH.jpg" class="card-img-top" alt="NVR Hikvision AcuSense">
                                 <div class="card-body">
                                     <h5 class="fw-bold">NVR AcuSense 16CH</h5>
                                     <p class="small text-secondary">DS-7616NXI-K2 · H.265+, 2 bahías, detección inteligente.</p>
@@ -293,11 +318,11 @@
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-3">
-                            <div class="card card-hover h-100">
-                                <img src="assets/images/ZK-SPEEDFACEV3L-RFID.png" class="card-img-top p-3" alt="ZKTeco">
+                            <div class="card card-hover">
+                                <img src="assets/images/ZK-SPEEDFACEV3L-RFID.png" class="card-img-top" alt="Control acceso ZKTeco">
                                 <div class="card-body">
                                     <h5 class="fw-bold">Control acceso Biométrico</h5>
-                                    <p class="small text-secondary">ZK-SpeedFace V3L · reconocimiento facial, WiFi, 500 rostros, 300 tarjetas, ideal para empresas.</p>
+                                    <p class="small text-secondary">ZK-SpeedFace V3L · reconocimiento facial, WiFi, 500 rostros, 300 tarjetas.</p>
                                     <div class="d-flex justify-content-between align-items-center mt-2">
                                         <span class="price-tag">Oferta mayorista</span>
                                         <a href="#contacto" class="btn btn-sm btn-outline-primary">Info</a>
@@ -306,8 +331,8 @@
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-3">
-                            <div class="card card-hover h-100">
-                                <img src="assets/images/TP-LINK-TL-SG2428P.png" class="card-img-top p-3" alt="Switch PoE">
+                            <div class="card card-hover">
+                                <img src="assets/images/TP-LINK-TL-SG2428P.png" class="card-img-top" alt="Switch PoE TP-Link">
                                 <div class="card-body">
                                     <h5 class="fw-bold">Switch PoE Gigabit</h5>
                                     <p class="small text-secondary">TP-Link TL-SG2428P · 24 puertos PoE+, administrable, 250W.</p>
@@ -320,12 +345,12 @@
                         </div>
                     </div>
                 </div>
-                <!-- Slide 2 (más productos) -->
+                <!-- Slide 2 -->
                 <div class="carousel-item">
                     <div class="row g-4">
                         <div class="col-md-6 col-lg-3">
-                            <div class="card card-hover h-100">
-                                <img src="assets/images/DS-2DE4425IW-DE.png" class="card-img-top p-3" alt="PTZ">
+                            <div class="card card-hover">
+                                <img src="assets/images/DS-2DE4425IW-DE.png" class="card-img-top" alt="Cámara PTZ Hikvision">
                                 <div class="card-body">
                                     <h5 class="fw-bold">Cámara PTZ 4MP</h5>
                                     <p class="small text-secondary">DS-2DE4425IW-DE · Zoom 25x, IR 100m, PoE+, audio bidireccional.</p>
@@ -337,8 +362,8 @@
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-3">
-                            <div class="card card-hover h-100">
-                                <img src="assets/images/CCR1009-8G-1S+.jfif" class="card-img-top p-3" alt="MikroTik">
+                            <div class="card card-hover">
+                                <img src="assets/images/CCR1009-8G-1S+.jfif" class="card-img-top" alt="Router MikroTik CCR">
                                 <div class="card-body">
                                     <h5 class="fw-bold">Router MikroTik CCR</h5>
                                     <p class="small text-secondary">CCR1009-8G-1S+ · 8 puertos Gigabit, SFP+, RouterOS L6.</p>
@@ -350,8 +375,8 @@
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-3">
-                            <div class="card card-hover h-100">
-                                <img src="assets/images/UPS-Forza-1000VA.jfif" class="card-img-top p-3" alt="UPS">
+                            <div class="card card-hover">
+                                <img src="assets/images/UPS-Forza-1000VA.jfif" class="card-img-top" alt="UPS Forza 1000VA">
                                 <div class="card-body">
                                     <h5 class="fw-bold">UPS Forza 1000VA</h5>
                                     <p class="small text-secondary">Interactivo, regulación AVR, 6 tomas, software de gestión.</p>
@@ -363,8 +388,8 @@
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-3">
-                            <div class="card card-hover h-100">
-                                <img src="assets/images/U6-Pro-WiFi 6.jfif" class="card-img-top p-3" alt="UniFi">
+                            <div class="card card-hover">
+                                <img src="assets/images/U6-Pro-WiFi 6.jfif" class="card-img-top" alt="AP UniFi 6 Pro">
                                 <div class="card-body">
                                     <h5 class="fw-bold">AP UniFi 6 Pro</h5>
                                     <p class="small text-secondary">U6-Pro · WiFi 6, 4x4 MU-MIMO, 5.3 Gbps, PoE+.</p>
@@ -380,52 +405,52 @@
             </div>
             <!-- Controles del carrusel -->
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselProductos" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon bg-dark rounded-circle p-3" aria-hidden="true"></span>
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Anterior</span>
             </button>
             <button class="carousel-control-next" type="button" data-bs-target="#carouselProductos" data-bs-slide="next">
-                <span class="carousel-control-next-icon bg-dark rounded-circle p-3" aria-hidden="true"></span>
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Siguiente</span>
             </button>
-            <!-- Indicadores opcionales -->
+            <!-- Indicadores -->
             <div class="carousel-indicators position-static mt-4">
                 <button type="button" data-bs-target="#carouselProductos" data-bs-slide-to="0" class="active bg-primary" aria-current="true" style="width: 10px; height: 10px; border-radius: 50%; margin: 0 5px;"></button>
                 <button type="button" data-bs-target="#carouselProductos" data-bs-slide-to="1" class="bg-secondary" style="width: 10px; height: 10px; border-radius: 50%; margin: 0 5px;"></button>
             </div>
         </div>
-    
+
         <div class="text-center mt-4">
             <a href="#contacto" class="btn btn-link">📋 Lista completa de productos y precios →</a>
         </div>
     </section>
 
-    <!-- SERVICIOS TÉCNICOS -->
+    <!-- SERVICIOS -->
     <section id="servicios" class="mt-5 pt-3">
         <h2 class="section-title">Servicios de integración y consultoría</h2>
         <div class="row g-4 mt-2">
             <div class="col-md-6">
-                <div class="card card-hover p-4 h-100">
+                <div class="card card-hover p-4">
                     <i class="fas fa-globe fa-2x mb-3" style="color:#1c6e8f;"></i>
                     <h4>Redes ISP y Corporativas</h4>
                     <p>Diseño y optimización de redes de datos, enlaces de fibra óptica, routing avanzado, balanceo de carga y alta disponibilidad. Especialistas en WISPs y proveedores locales.</p>
                 </div>
             </div>
             <div class="col-md-6">
-                <div class="card card-hover p-4 h-100">
+                <div class="card card-hover p-4">
                     <i class="fas fa-shield-alt fa-2x mb-3" style="color:#1c6e8f;"></i>
                     <h4>Seguridad Electrónica</h4>
                     <p>Videovigilancia profesional con IA (Hikvision), alarmas perimetrales, control de accesos biométrico, integración de sistemas para monitoreo remoto.</p>
                 </div>
             </div>
             <div class="col-md-6">
-                <div class="card card-hover p-4 h-100">
+                <div class="card card-hover p-4">
                     <i class="fas fa-microchip fa-2x mb-3" style="color:#1c6e8f;"></i>
                     <h4>Automatización y desarrollo Python</h4>
                     <p>Scripts a medida, integración con APIs (WhatsApp, Telegram, Hikvision ISAPI, paneles solares), dashboards de telemetría y notificaciones inteligentes.</p>
                 </div>
             </div>
             <div class="col-md-6">
-                <div class="card card-hover p-4 h-100">
+                <div class="card card-hover p-4">
                     <i class="fas fa-charging-station fa-2x mb-3" style="color:#1c6e8f;"></i>
                     <h4>Proyectos Llave en Mano</h4>
                     <p>Desde el estudio técnico hasta la instalación y puesta en marcha. Cobertura nacional, asesoría personalizada y soporte post-venta.</p>
@@ -434,7 +459,7 @@
         </div>
     </section>
 
-    <!-- IMPLEMENTACIONES CON MARCAS PREMIUM (sin venta directa) -->
+    <!-- IMPLEMENTACIONES PREMIUM -->
     <section id="implementaciones" class="mt-5 bg-light rounded-4 p-4 p-md-5">
         <div class="text-center mb-4">
             <h2 class="section-title" style="display: inline-block;">Implementaciones con tecnología de punta</h2>
@@ -462,7 +487,7 @@
         </div>
     </section>
 
-    <!-- SOBRE EL INGENIERO Y EMPRESA -->
+    <!-- SOBRE EL INGENIERO -->
     <section class="mt-5">
         <div class="row align-items-center">
             <div class="col-md-5 mb-4 mb-md-0">
@@ -497,7 +522,7 @@
         </div>
     </section>
 
-    <!-- CONTACTO + WHATSAPP -->
+    <!-- CONTACTO -->
     <section id="contacto" class="mt-5 pt-3 pb-4">
         <h2 class="section-title">Contacto y cotizaciones</h2>
         <div class="row g-4">
@@ -507,9 +532,8 @@
                     <p class="text-muted">Escríbenos por WhatsApp, correo o llámanos para recibir precios de mayorista, cotización de proyectos o soporte técnico.</p>
                     <ul class="list-unstyled mt-3">
                         <li class="mb-3"><i class="fab fa-whatsapp fa-fw me-3 text-success fs-4"></i> <strong>WhatsApp:</strong> <a href="https://wa.me/593992965212" class="text-decoration-none" target="_blank">+593 99 296 5212</a></li>
-                        <li class="mb-3"><i class="fas fa-envelope fa-fw me-3 text-primary fs-4"></i> <strong>Email profesional:</strong> <a href="mailto:j.arias@dariquem.com" class="text-decoration-none">jarias@DARIQUEM.com</a></li>
+                        <li class="mb-3"><i class="fas fa-envelope fa-fw me-3 text-primary fs-4"></i> <strong>Email profesional:</strong> <a href="mailto:jarias@DARIQUEM.com" class="text-decoration-none">jarias@DARIQUEM.com</a></li>
                         <li class="mb-3"><i class="fas fa-map-pin fa-fw me-3 text-danger fs-4"></i> <strong>Oficina técnica:</strong> Quito, Pichincha, Ecuador</li>
-                        <!--<li><i class="fab fa-github fa-fw me-3 fs-4"></i> <strong>GitHub:</strong> <a href="https://github.com/dariquem" target="_blank" class="text-decoration-none">/dariquem</a></li>-->
                     </ul>
                 </div>
             </div>
@@ -530,7 +554,7 @@
     </section>
 </div>
 
-<!-- Footer profesional -->
+<!-- Footer -->
 <footer class="mt-5">
     <div class="container py-5">
         <div class="row g-4">
