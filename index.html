@@ -86,6 +86,31 @@
             font-weight: 500;
             margin-bottom: 1.2rem;
         }
+
+        /* Logo de fondo difuminado */
+        .hero::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 380px;
+            height: 380px;
+            background: url('assets/img/logotipo2.png') no-repeat center;
+            background-size: contain;
+            opacity: 0.12;
+            filter: blur(1.5px);
+            pointer-events: none; /* para que no interfiera con clics */
+            z-index: 1;
+        }
+        
+        /* Si quieres que aparezca también en móviles más pequeño */
+        @media (max-width: 768px) {
+            .hero::after {
+                width: 220px;
+                height: 220px;
+                opacity: 0.1;
+            }
+        }
         .btn-outline-light {
             border-width: 2px;
         }
@@ -195,7 +220,7 @@
         <div class="row align-items-center">
             <div class="col-lg-8 mx-auto text-center">
                 <span class="hero-badge"><i class="fas fa-certificate me-1"></i> Ingeniería especializada · Distribuidor mayorista</span>
-                <img src="assets/images/logotipo.jpeg" alt="Logo DARIQUEM" class="mb-4" style="max-height: 80px;">
+                
                 <h1 class="hero-title">Soluciones de ingeniería y tecnología para empresas</h1>
                 <p class="lead mt-3">+15 años diseñando redes, sistemas de seguridad y automatización. <br class="d-none d-md-block">Venta de equipos a <strong>precio de mayorista</strong> e integración profesional.</p>
                 <div class="mt-4">
@@ -399,9 +424,9 @@
                     <p class="text-muted">Escríbenos por WhatsApp, correo o llámanos para recibir precios de mayorista, cotización de proyectos o soporte técnico.</p>
                     <ul class="list-unstyled mt-3">
                         <li class="mb-3"><i class="fab fa-whatsapp fa-fw me-3 text-success fs-4"></i> <strong>WhatsApp:</strong> <a href="https://wa.me/593992965212" class="text-decoration-none" target="_blank">+593 99 296 5212</a></li>
-                        <li class="mb-3"><i class="fas fa-envelope fa-fw me-3 text-primary fs-4"></i> <strong>Email profesional:</strong> <a href="mailto:jarias@DARIQUEM.com" class="text-decoration-none">jarias@DARIQUEM.com</a></li>
+                        <li class="mb-3"><i class="fas fa-envelope fa-fw me-3 text-primary fs-4"></i> <strong>Email profesional:</strong> <a href="mailto:j.arias@dariquem.com" class="text-decoration-none">jarias@DARIQUEM.com</a></li>
                         <li class="mb-3"><i class="fas fa-map-pin fa-fw me-3 text-danger fs-4"></i> <strong>Oficina técnica:</strong> Quito, Pichincha, Ecuador</li>
-                        <li><i class="fab fa-github fa-fw me-3 fs-4"></i> <strong>GitHub:</strong> <a href="https://github.com/dariquem" target="_blank" class="text-decoration-none">/dariquem</a></li>
+                        <!--<li><i class="fab fa-github fa-fw me-3 fs-4"></i> <strong>GitHub:</strong> <a href="https://github.com/dariquem" target="_blank" class="text-decoration-none">/dariquem</a></li>-->
                     </ul>
                 </div>
             </div>
